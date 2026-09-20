@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Cyrus AI</title>
+<meta name="description" content="Get in touch with Cyrus AI for a free consultation on how AI can help your business." />
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="bg-glow"></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="navg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f7fff"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="16" fill="#131a2e"/>
+        <path d="M43 20a14 14 0 1 0 0 24" stroke="url(#navg)" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <circle cx="43" cy="32" r="4" fill="url(#navg)"/>
+      </svg>
+      Cyrus AI
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn btn-ghost">Log in</a>
+      <a href="contact.html" class="btn btn-primary">Book a call</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">Home / <span>Contact</span></div>
+      <span class="eyebrow">Get in touch</span>
+      <h1>Tell us about your business — we'll tell you what AI can (and can't) do for it</h1>
+      <p>Book a free 30-minute consultation, or send us a message and we'll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container contact-grid">
+
+      <div data-reveal>
+        <div class="contact-info-card">
+          <h4>Email</h4>
+          <a href="mailto:hello@cyrusai.co">hello@cyrusai.co</a>
+        </div>
+        <div class="contact-info-card">
+          <h4>What to expect</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">A free, no-obligation 30-minute call to discuss your business, current tools, and where AI might realistically help.</p>
+        </div>
+        <div class="contact-info-card">
+          <h4>Response time</h4>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">We reply to every enquiry within one business day.</p>
+        </div>
+      </div>
+
+      <div class="form-card" data-reveal>
+        <h3 style="margin-bottom: 24px;">Send us a message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="field">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Company name" />
+            </div>
+            <div class="field">
+              <label for="size">Company size</label>
+              <select id="size" name="size">
+                <option value="">Select one</option>
+                <option>1–10 employees</option>
+                <option>11–50 employees</option>
+                <option>51–250 employees</option>
+                <option>250+ employees</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">What are you hoping AI could help with?</label>
+            <textarea id="message" name="message" placeholder="Tell us a bit about your business and what's prompting you to look into AI..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+          <p class="form-note">This opens your email client with your message pre-filled to hello@cyrusai.co — we typically reply within one business day.</p>
+          <p class="form-status" id="form-status"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#131a2e"/>
+            <path d="M43 20a14 14 0 1 0 0 24" stroke="#4f7fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="43" cy="32" r="4" fill="#8b5cf6"/>
+          </svg>
+          Cyrus AI
+        </a>
+        <p>Practical AI advisory and implementation for SMEs and larger businesses ready to move past the hype.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">AI Strategy</a></li>
+          <li><a href="services.html">Automation</a></li>
+          <li><a href="services.html">Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@cyrusai.co">hello@cyrusai.co</a></li>
+          <li><a href="contact.html">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Cyrus AI. All rights reserved.</span>
+      <span>Made with ambition and a healthy dose of realism about AI.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
