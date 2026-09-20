@@ -47,7 +47,17 @@
           <span class="slide-kicker"><span class="slide-num">01</span> Your Business, Your Rules</span>
           <h2>Start with a free consultation</h2>
           <p class="slide-body">Tell us about your business, your goals, and what's holding you back. We'll give you an honest, no-obligation view on where AI could genuinely help — free of charge.</p>
-          <a href="contact.html" class="btn btn-primary">Book your free consultation</a>
+          <form class="quick-capture" data-consult-form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New free consultation request — Cyrus AI website" />
+            <input type="hidden" name="source" value="Home — Phase 1 slide" />
+            <div class="quick-capture-row">
+              <label for="quick-email-1" class="sr-only">Email address</label>
+              <input type="email" id="quick-email-1" name="email" placeholder="you@company.com" required />
+              <button type="submit" class="btn btn-primary">Book your free consultation</button>
+            </div>
+            <p class="quick-capture-note">No spam — just your free consultation, straight to your inbox.</p>
+            <p class="quick-capture-status" aria-live="polite"></p>
+          </form>
         </div>
         <div class="slide-visual">
           <div class="big-num">01</div>

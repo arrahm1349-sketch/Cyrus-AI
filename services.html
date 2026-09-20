@@ -165,7 +165,17 @@
         <h2>Not sure which service fits?</h2>
         <p>Tell us about your business in a free 30-minute call and we'll recommend the right starting point — no obligation.</p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+          <form class="quick-capture" data-consult-form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New free consultation request — Cyrus AI website" />
+            <input type="hidden" name="source" value="Services page CTA" />
+            <div class="quick-capture-row">
+              <label for="quick-email-services" class="sr-only">Email address</label>
+              <input type="email" id="quick-email-services" name="email" placeholder="you@company.com" required />
+              <button type="submit" class="btn btn-primary">Book a free consultation</button>
+            </div>
+            <p class="quick-capture-note">No spam — just your free consultation, straight to your inbox.</p>
+            <p class="quick-capture-status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </div>

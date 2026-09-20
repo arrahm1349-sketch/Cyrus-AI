@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = (data.get("message") || "").toString().trim();
 
       if (!name || !email || !message) {
-        showStatus(status, "Please fill in your name, email, and message.", "error");
+        showStatus(status, "Please fill in your name, email, and message.", "error", "form-status");
         return;
       }
 
@@ -112,14 +112,56 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
       window.location.href = `mailto:hello@cyrusai.co?subject=${subject}&body=${body}`;
-      showStatus(status, "Opening your email client to send this enquiry…", "success");
+      showStatus(status, "Opening your email client to send this enquiry…", "success", "form-status");
       form.reset();
     });
   }
 
-  function showStatus(el, msg, type) {
+  // Quick email-capture forms ("book a free consultation" CTAs).
+  // Posts to Formspree so leads land in your inbox automatically; if the
+  // endpoint isn't set up yet (or fails), falls back to mailto so no lead
+  // is lost. Sign up free at https://formspree.io and replace the form
+  // action below with your own endpoint to start collecting these directly.
+  document.querySelectorAll("[data-consult-form]").forEach((quickForm) => {
+    quickForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = quickForm.querySelector(".quick-capture-status");
+      const submitBtn = quickForm.querySelector("button[type='submit']");
+      const email = (new FormData(quickForm).get("email") || "").toString().trim();
+
+      if (!email) {
+        showStatus(status, "Please enter your email address.", "error", "quick-capture-status");
+        return;
+      }
+
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      try {
+        const res = await fetch(quickForm.action, {
+          method: "POST",
+          body: new FormData(quickForm),
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("form endpoint not ready");
+        showStatus(status, "Thanks! We'll be in touch within one business day.", "success", "quick-capture-status");
+        quickForm.reset();
+      } catch (err) {
+        const subject = encodeURIComponent("Free consultation request — Cyrus AI website");
+        const body = encodeURIComponent(`Email: ${email}\n\nRequesting a free consultation.`);
+        window.location.href = `mailto:hello@cyrusai.co?subject=${subject}&body=${body}`;
+        showStatus(status, "Opening your email client to confirm your request…", "success", "quick-capture-status");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      }
+    });
+  });
+
+  function showStatus(el, msg, type, baseClass) {
     if (!el) return;
     el.textContent = msg;
-    el.className = `form-status visible ${type}`;
+    el.className = `${baseClass} visible ${type}`;
   }
 });

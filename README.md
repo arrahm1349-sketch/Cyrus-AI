@@ -38,9 +38,17 @@ Pages — with no build command and `.` (or `/`) as the publish directory.
 
 - Replace the placeholder email `hello@cyrusai.co` in `contact.html`,
   `index.html`, `services.html`, and `about.html` with your real domain email.
-- The contact form currently opens the visitor's email client via `mailto:`
-  (no backend). To collect submissions directly, wire `js/main.js` up to a
-  form backend (e.g. Formspree, a serverless function, or your CRM's API).
+- **Set up Formspree for the "book a free consultation" email-capture forms**
+  (the quick email field on the home page and the Services/About CTA
+  banners): sign up free at https://formspree.io, create a form, and replace
+  every `https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID` in `index.html`,
+  `services.html`, and `about.html` with your real endpoint. Until you do
+  this, submissions gracefully fall back to opening the visitor's own email
+  client via `mailto:` — it works, but relies on them hitting send, so real
+  leads will go missing. Swapping in the endpoint (2 minutes) fixes that.
+- The main contact form (`contact.html`) still uses `mailto:` only. To
+  collect those submissions directly too, wire it to Formspree (or another
+  backend) the same way.
 - Update social/company links in the footer if you add them.
 - The logo artwork was cropped/keyed from a supplied raster image. If you
   later get a vector version, swap `assets/logo-icon.png` and
