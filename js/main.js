@@ -42,6 +42,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Phase slide deck (home page)
+  const stage = document.querySelector(".slide-stage");
+  if (stage) {
+    const slides = Array.from(stage.querySelectorAll(".slide"));
+    const dots = Array.from(document.querySelectorAll(".slide-dot"));
+    const prevBtn = document.querySelector(".slide-arrow.prev");
+    const nextBtn = document.querySelector(".slide-arrow.next");
+    const counter = document.querySelector(".slide-counter");
+    let index = 0;
+
+    function render() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === index);
+        slide.classList.toggle("is-prev", i < index);
+      });
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+      if (counter) counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+      if (prevBtn) prevBtn.disabled = index === 0;
+      if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+    }
+
+    function goTo(i) {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      render();
+    }
+
+    prevBtn?.addEventListener("click", () => goTo(index - 1));
+    nextBtn?.addEventListener("click", () => goTo(index + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") goTo(index + 1);
+      if (e.key === "ArrowLeft") goTo(index - 1);
+    });
+
+    let touchStartX = null;
+    stage.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", (e) => {
+      if (touchStartX === null) return;
+      const delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 40) goTo(delta < 0 ? index + 1 : index - 1);
+      touchStartX = null;
+    }, { passive: true });
+
+    render();
+  }
+
   // Contact form (static site — no backend, so we confirm client-side
   // and hand off to the visitor's email client via mailto)
   const form = document.getElementById("contact-form");

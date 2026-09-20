@@ -8,13 +8,15 @@ organisations identify, implement, and scale AI solutions.
 Plain HTML/CSS/JS — no build step, no dependencies. Works on any static host.
 
 ```
-index.html      Home
-services.html   Services & engagement models
-about.html      About / values / who we help
-contact.html    Contact form + details
-css/style.css   Shared styles
-js/main.js      Nav toggle, scroll reveal, contact form handling
-assets/logo.svg Logo mark (used as favicon)
+index.html               Home — four-phase slide deck
+services.html            Services & engagement models
+about.html               About / values / who we help
+contact.html             Contact form + details
+css/style.css            Shared styles
+js/main.js               Nav toggle, scroll reveal, slide deck, contact form
+assets/logo-icon.png     Icon mark — used in the nav bar and favicon
+assets/logo-lockup.png   Icon + wordmark — used in the footer
+assets/favicon.png       Favicon (square-padded icon)
 ```
 
 ## Running locally
@@ -39,6 +41,7 @@ Pages — with no build command and `.` (or `/`) as the publish directory.
 - The contact form currently opens the visitor's email client via `mailto:`
   (no backend). To collect submissions directly, wire `js/main.js` up to a
   form backend (e.g. Formspree, a serverless function, or your CRM's API).
-- Swap the testimonial and stats on the home page for real figures once
-  available.
 - Update social/company links in the footer if you add them.
+- The logo artwork was cropped/keyed from a supplied raster image. If you
+  later get a vector version, swap `assets/logo-icon.png` and
+  `assets/logo-lockup.png` for it to keep edges crisp at large sizes.
