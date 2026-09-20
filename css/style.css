@@ -386,16 +386,51 @@ h3 { font-size: 1.3rem; }
   letter-spacing: 0.03em;
 }
 
-/* ---------- phase slide deck ---------- */
-.slide-app {
-  --slide-nav-h: 76px;
+/* ---------- brand hero ---------- */
+.brand-hero {
+  padding: 72px 0 56px;
+  text-align: center;
 }
 
+.brand-hero-icon {
+  height: 88px;
+  width: auto;
+  margin: 0 auto 24px;
+}
+
+.brand-hero-name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 10px;
+}
+
+.brand-hero-slogan {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 18px;
+}
+
+.brand-hero-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ---------- phase slide deck ---------- */
 .slide-stage {
   position: relative;
-  height: calc(100vh - var(--slide-nav-h));
-  min-height: 560px;
+  height: min(600px, 65vh);
+  min-height: 440px;
   overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .slide {
@@ -573,10 +608,18 @@ h3 { font-size: 1.3rem; }
 }
 
 @media (max-width: 640px) {
+  .brand-hero {
+    padding: 48px 0 36px;
+  }
+
+  .brand-hero-icon {
+    height: 68px;
+  }
+
   .slide-stage {
     height: auto;
     min-height: 0;
-    padding: 40px 0 100px;
+    padding: 40px 0 60px;
   }
 
   .slide {

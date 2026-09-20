@@ -14,8 +14,6 @@
 <body>
 <div class="bg-glow"></div>
 
-<div class="slide-app">
-
 <header class="site-header">
   <div class="container nav">
     <a href="index.html" class="brand">
@@ -39,25 +37,23 @@
 
 <main>
 
+  <section class="brand-hero">
+    <div class="container">
+      <img src="assets/logo-icon.png" alt="" class="brand-hero-icon" />
+      <h1 class="brand-hero-name">Cyrus AI</h1>
+      <p class="brand-hero-slogan">Your Business, Your Rules</p>
+      <p class="brand-hero-sub">Practical AI advisory and implementation for SMEs and larger businesses — delivered in four clear phases.</p>
+    </div>
+  </section>
+
   <section class="slide-stage" aria-roledescription="carousel" aria-label="Our four phases">
 
     <div class="slide is-active">
       <div class="container slide-grid">
         <div>
-          <span class="slide-kicker"><span class="slide-num">01</span> Your Business, Your Rules</span>
-          <h2>Start with a free consultation</h2>
-          <p class="slide-body">Tell us about your business, your goals, and what's holding you back. We'll give you an honest, no-obligation view on where AI could genuinely help — free of charge.</p>
-          <form class="quick-capture" data-consult-form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-            <input type="hidden" name="_subject" value="New free consultation request — Cyrus AI website" />
-            <input type="hidden" name="source" value="Home — Phase 1 slide" />
-            <div class="quick-capture-row">
-              <label for="quick-email-1" class="sr-only">Email address</label>
-              <input type="email" id="quick-email-1" name="email" placeholder="you@company.com" required />
-              <button type="submit" class="btn btn-primary">Book your free consultation</button>
-            </div>
-            <p class="quick-capture-note">No spam — just your free consultation, straight to your inbox.</p>
-            <p class="quick-capture-status" aria-live="polite"></p>
-          </form>
+          <span class="slide-kicker"><span class="slide-num">01</span> Phase One</span>
+          <h2>Free Consultation</h2>
+          <p class="slide-body">A no-obligation conversation to understand your business, your goals, and what's holding you back — and give you an honest first view on where AI could genuinely help.</p>
         </div>
         <div class="slide-visual">
           <div class="big-num">01</div>
@@ -74,9 +70,8 @@
       <div class="container slide-grid">
         <div>
           <span class="slide-kicker"><span class="slide-num">02</span> Phase Two</span>
-          <h2>We inspect your business</h2>
+          <h2>Business Inspection</h2>
           <p class="slide-body">Our team looks under the hood — your data, systems, workflows, and capacity — to find exactly where AI can save time, cut cost, or unlock growth.</p>
-          <a href="contact.html" class="btn btn-primary">Book a business inspection</a>
         </div>
         <div class="slide-visual">
           <div class="big-num">02</div>
@@ -93,9 +88,8 @@
       <div class="container slide-grid">
         <div>
           <span class="slide-kicker"><span class="slide-num">03</span> Phase Three</span>
-          <h2>We build your solution</h2>
+          <h2>Solutions &amp; AI Protocols</h2>
           <p class="slide-body">Our technicians design tailored solutions and create custom AI protocols for your business — improving efficiency and increasing capacity without disrupting what already works.</p>
-          <a href="services.html" class="btn btn-primary">See our services</a>
         </div>
         <div class="slide-visual">
           <div class="big-num">03</div>
@@ -112,9 +106,8 @@
       <div class="container slide-grid">
         <div>
           <span class="slide-kicker"><span class="slide-num">04</span> Phase Four</span>
-          <h2>We implement, together</h2>
+          <h2>Implementation</h2>
           <p class="slide-body">We roll the solution into daily operations, run hands-on workshops with your team, and test everything thoroughly before handover — so it works from day one.</p>
-          <a href="contact.html" class="btn btn-primary">Talk to us about implementation</a>
         </div>
         <div class="slide-visual">
           <div class="big-num">04</div>
@@ -143,6 +136,28 @@
       <span class="slide-counter">01 / 04</span>
     </div>
 
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="cta-banner" data-reveal>
+        <h2>Book your free consultation</h2>
+        <p>Leave your email and we'll be in touch to arrange a no-obligation call — no pressure, just an honest first conversation.</p>
+        <div class="cta-actions">
+          <form class="quick-capture" data-consult-form action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New free consultation request — Cyrus AI website" />
+            <input type="hidden" name="source" value="Home — Book consultation section" />
+            <div class="quick-capture-row">
+              <label for="quick-email-1" class="sr-only">Email address</label>
+              <input type="email" id="quick-email-1" name="email" placeholder="you@company.com" required />
+              <button type="submit" class="btn btn-primary">Book your free consultation</button>
+            </div>
+            <p class="quick-capture-note">No spam — just your free consultation, straight to your inbox.</p>
+            <p class="quick-capture-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -186,8 +201,6 @@
     </div>
   </div>
 </footer>
-
-</div>
 
 <script src="js/main.js"></script>
 </body>
